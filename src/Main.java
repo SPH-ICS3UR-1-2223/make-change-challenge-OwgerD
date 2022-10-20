@@ -12,15 +12,20 @@ public class Main {
 		double pay = in.nextDouble();
 		//Print out the amount of change
 		double change = pay - price;
+		int leftover = (int)((change*100)%10);
+		if (leftover==1 || leftover ==2) {
+			change=change-(leftover/100.0);
+		}else if (leftover==3 || leftover==4) {
+			change=change + ((5-leftover)/100.0);
+		}
 		if(change<0) {
 			System.out.println("Sorry, but this isn't enough.");
 		}
 		else if(pay==price) {
 			System.out.println("Your change is $0.00");
 		}else {
-			System.out.println("Your change is $"+ change);
+			System.out.println("Your change is $"+ (int)change);
 		}
-		
 		//Break the change into all denominations: 
 		//$100,$50,$20,$10,$5,$2,$1,$0.25,$0.10,$0.05
 	if (change / 100 >=1) {
@@ -72,6 +77,7 @@ public class Main {
 		change=Math.round(change*100)/100.0;
 	}	
 	
+	
 	if(change / 0.10>=1) {
 		int dime = (int) (change/0.10);
 		System.out.println("$0.10s:"+ dime);
@@ -84,12 +90,7 @@ public class Main {
 		change=change-Nick*0.05;
 	}	
 
-	int leftover = (int)((change*100)%10);
-	if (leftover==1 || leftover ==2) {
-		change=change-(leftover/100.0);
-	}else if (leftover==3 || leftover==4) {
-		change=change + ((5-leftover)/100.0);
-	}
+	
 	
 
 

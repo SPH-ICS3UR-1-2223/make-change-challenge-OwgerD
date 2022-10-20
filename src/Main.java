@@ -23,8 +23,6 @@ public class Main {
 		}
 		else if(pay==price) {
 			System.out.println("Your change is $0.00");
-		}else {
-			System.out.println("Your change is $"+ (int)change);
 		}
 		//Break the change into all denominations: 
 		//$100,$50,$20,$10,$5,$2,$1,$0.25,$0.10,$0.05
